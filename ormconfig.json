@@ -1,0 +1,10 @@
+{
+  "type": "mssql",
+  "host": "DESKTOP-G65P5CT",
+  "port": 1433,
+  "username": "sa",
+  "password": "1997",
+  "database": "DoTech",
+  "entities": ["dist/**/*.entity{.ts,.js}"],
+  "synchronize": true
+}
