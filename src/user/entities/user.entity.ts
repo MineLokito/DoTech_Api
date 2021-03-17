@@ -9,7 +9,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-@Entity('users')
+@Entity('Usuarios')
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
@@ -29,13 +29,14 @@ export class User {
   @Column({ type: 'varchar', length: 255, nullable: false })
   email: string;
 
-  @Column({
-    type: 'varchar',
-    length: 128,
-    nullable: false,
-    select: false,
-  })
+  @Column({ type: 'varchar', length: 128, nullable: false, select: false })
   password: string;
+
+  @Column({ type: 'bit', default: true, nullable: true })
+  isAdmin: boolean;
+
+  @CreateDateColumn({ name: 'created_at', type: 'datetime2', nullable: true })
+  createdAt: Date;
 
   @BeforeInsert()
   @BeforeUpdate()
